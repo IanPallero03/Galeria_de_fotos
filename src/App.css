@@ -1,0 +1,318 @@
+/* Estilos para toda la galería */
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/*BOTONES DE CATEGORIA*/
+button {
+  padding: 6px 12px;
+  border-radius: 8px;
+  background-color: #ddd;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #bbb;
+  color: #2c7e88;
+  color: #67898e;
+}
+
+/*SECCION GALERIA*/
+.galeria-contenedor {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Cada tarjeta de imagen */
+.tarjeta-imagen {
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  
+}
+
+.tarjeta-imagen:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+  
+}
+
+/* Imagen dentro de la tarjeta */
+.imagen-galeria {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.tarjeta-imagen:hover .imagen-galeria {
+  transform: scale(1.05);
+}
+
+
+/* Título de la imagen */
+.titulo-imagen {
+  text-align: center;
+  font-weight: 500;
+  padding: 10px;
+  color: #333;
+  font-size: 1rem;
+}
+
+/*BOTON DE CERRAR*/
+.cerrar-boton {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.cerrar-boton:hover {
+  background-color: #0056b3;
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+
+/* boton dia y noche */
+.boton-modo {
+  position: fixed;
+  top: 2.1rem;
+  right: 1rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  z-index: 1000;
+  color:  #95a2c4; /* verde día */
+  transition: transform 0.3s ease, color 0.8s ease;
+ 
+}
+
+.boton-modo:focus {
+  outline: none;
+  box-shadow: transparent;
+}
+
+.boton-modo:hover {
+  transform: scale(1.1);
+}
+
+.boton-modo:active {
+  transform: rotate(180deg) scale(1.1);
+}
+
+@media (max-width: 480px) {
+  .titulo-imagen {
+    font-size: 0.9rem;
+  }
+
+  .boton-modo {
+    font-size: 1.2rem;
+    top: 1rem;
+    right: 0.5rem;
+  }
+
+  .modal-contenido {
+    padding: 10px;
+  }
+}
+
+
+/* ver imagenes y desplazarte*/
+
+.modal {
+  position: fixed;
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  height: 100%;
+  background: rgba(42, 41, 41, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; 
+}
+
+.modal-contenido {
+  background: #ffffff;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  max-width: 90%;
+  max-height: 90%;
+  overflow: auto;
+}
+
+.modal-contenido img {
+  max-width: 100%;
+  max-height: 70vh; /* altura máxima controlada */
+  height: auto;
+  border-radius: 10px;
+  object-fit: contain; /* mantiene la proporción de la imagen */
+}
+
+.modal-contenido button {
+  background: #121212;
+  color: #ffffff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 10px 5px;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.modal-contenido button:hover {
+  background: #333333;
+}
+
+/*BOTON PARA DESPLAZAR IMAGENES*/
+
+.boton-desplazamiento{
+  background: transparent;
+  color: #0c0b0b;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 50px;
+}
+
+.boton-desplazamiento:focus {
+  outline: none;
+}
+.boton-desplazamiento:hover{
+  transform: scale(1.2);
+  transition: 0.3s;
+  background-color: transparent;
+}
+
+/*BOTON PARA DESCARGAR IMAGENES*/
+
+.boton-descargar {
+  background-color: #213363;
+  color: #ffffff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 10px 5px;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.boton-descargar:hover {
+  background-color: #2980b9;
+  color: white;
+  transform: scale(1.02);
+}
+
+/*SECCION DE BURBUJAS*/
+
+.burbujas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.burbuja {
+  position: absolute;
+  bottom: -150px;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(213, 223, 236, 0.1);
+  border-radius: 100%;
+  animation: flotar 10s infinite ease-in;
+}
+
+@keyframes flotar {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-1000px) scale(0.2);
+    opacity: 0;
+  }
+}
+
+
+/* Fondo para el modo Día */
+.fondo-dia {
+  background-image: url('imagenes/fondo-dia.gif');
+  background-size: cover; /* Hace que el fondo cubra toda la pantalla */
+  background-position: center; /* Centra el fondo */
+  background-repeat: no-repeat; /* No repite el fondo */
+  color: #121212;
+  min-height: 100vh; /* Asegura que el fondo ocupe todo el alto de la pantalla */
+  transition: background-image 1s, color 1s;
+}
+
+/* Fondo para el modo Noche */
+.fondo-noche {
+  background-image: url('/imagenes/fondo-noche.gif');
+  background-size: cover; /* Hace que el fondo cubra toda la pantalla */
+  background-position: center; /* Centra el fondo */
+  background-repeat: no-repeat; /* No repite el fondo */
+  color: #f0f0f0;
+  min-height: 100vh; /* Asegura que el fondo ocupe todo el alto de la pantalla */
+  transition: background-image 1s, color 1s;
+}
+
+/* Media Query para dispositivos móviles */
+@media screen and (max-width: 768px) {
+  .fondo-dia, .fondo-noche {
+    background-size: cover; /* Asegura que el fondo siempre cubra la pantalla */
+    background-position: center center; /* Centra el fondo */
+    min-height: 100vh; /* Ocupa toda la altura */
+    background-attachment: fixed; /* Fija el fondo para dar efecto parallax */
+  }
+
+  /* Estilos para mejorar la experiencia en móviles */
+  body {
+    font-size: 14px; /* Reduce el tamaño de la fuente en móviles */
+  }
+
+  .boton-modo {
+    font-size: 1.5rem; /* Ajusta el tamaño del botón para que sea visible en móviles */
+    padding: 10px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+
+  h1 {
+    font-size: 1.5rem; /* Ajusta el tamaño del título */
+  }
+}
+
+
