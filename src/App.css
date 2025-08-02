@@ -266,52 +266,53 @@ button:hover {
 }
 
 
-/* Fondo para el modo Día */
-.fondo-dia {
-  background-image: url('imagenes/fondo-dia.gif');
-  background-size: cover; /* Hace que el fondo cubra toda la pantalla */
-  background-position: center; /* Centra el fondo */
-  background-repeat: no-repeat; /* No repite el fondo */
-  color: #121212;
-  min-height: 100vh; /* Asegura que el fondo ocupe todo el alto de la pantalla */
-  transition: background-image 1s, color 1s;
+.fondo-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 1;
+  pointer-events: none;
 }
 
-/* Fondo para el modo Noche */
-.fondo-noche {
-  background-image: url('/imagenes/fondo-noche.gif');
-  background-size: cover; /* Hace que el fondo cubra toda la pantalla */
-  background-position: center; /* Centra el fondo */
-  background-repeat: no-repeat; /* No repite el fondo */
-  color: #f0f0f0;
-  min-height: 100vh; /* Asegura que el fondo ocupe todo el alto de la pantalla */
-  transition: background-image 1s, color 1s;
+.modo-dia {
+  color: #121212;
+  transition: color 1s;
 }
+
+.modo-noche {
+  color: #f0f0f0;
+  transition: color 1s;
+}
+
 
 /* Media Query para dispositivos móviles */
 @media screen and (max-width: 768px) {
-  .fondo-dia, .fondo-noche {
-    background-size: cover; /* Asegura que el fondo siempre cubra la pantalla */
-    background-position: center center; /* Centra el fondo */
-    min-height: 100vh; /* Ocupa toda la altura */
-    background-attachment: fixed; /* Fija el fondo para dar efecto parallax */
-  }
-
-  /* Estilos para mejorar la experiencia en móviles */
-  body {
-    font-size: 14px; /* Reduce el tamaño de la fuente en móviles */
+  .fondo-video {
+    object-fit: cover;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0.5; /* Podés bajarla para ahorrar batería o mejorar la legibilidad */
   }
 
   .boton-modo {
-    font-size: 1.5rem; /* Ajusta el tamaño del botón para que sea visible en móviles */
+    font-size: 1.5rem;
     padding: 10px;
     position: absolute;
     top: 15px;
     right: 15px;
+    z-index: 10;
+  }
+
+  body {
+    font-size: 14px;
   }
 
   h1 {
-    font-size: 1.5rem; /* Ajusta el tamaño del título */
+    font-size: 1.5rem;
   }
 }
 
