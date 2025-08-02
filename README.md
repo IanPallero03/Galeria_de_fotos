@@ -1,12 +1,38 @@
-# React + Vite
+# 🖼️ Galería de Fotos - Mi Primer Proyecto con React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este es mi **primer proyecto** realizado con **React** y **Vite**: una **Galería de Imágenes interactiva**, funcional y adaptable a distintos dispositivos. Es parte de mi proceso de aprendizaje en desarrollo web frontend. 💻✨
 
-Currently, two official plugins are available:
+🔗 **Podés verlo online acá**:  
+👉 [Galería de Fotos Deploy](https://ianpallero03.github.io/Galeria_de_fotos/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🧰 Tecnologías utilizadas
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- ⚛️ React
+- ⚡ Vite
+- 💅 CSS
+- 📦 Git & GitHub Pages
+
+---
+
+## 🧠 Funcionalidades implementadas
+
+- ✅ Subir imágenes desde tu PC
+- ✅ Filtrar imágenes por título
+- ✅ Categorías: Naturaleza, Mascotas, Ciudades
+- ✅ Vista de galería ajustable (1x1, 2x2, 3x3, 4x4)
+- ✅ Modal con imagen ampliada y navegación con teclado (← →)
+- ✅ Botón para descargar la imagen
+- ✅ Modo Día 🌞 y Noche 🌙 con fondo animado (MP4 optimizado)
+- ✅ Diseño responsive para computadoras y celulares
+- ✅ Efecto de burbujas animadas en el fondo 🎈
+
+---
+
+## 🚀 ¿Cómo ejecutarlo localmente?
+
+1. Cloná el repositorio:
+
+```bash
+git clone https://github.com/IanPallero03/Galeria_de_fotos.git
