@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Galeria from './Galeria';
+import Galeria from './galeria';
 import ModalImagen from './ModalImagen';
 import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -20,18 +20,18 @@ function App() {
 
   // Seccion IMAGENES POR DEFECTO
   const imagenes = [
-    { url: '/imagenes/naturaleza1.jpg', titulo: 'Montañas', categoria: 'Naturaleza' },
-    { url: '/imagenes/naturaleza2.webp', titulo: 'Campo', categoria: 'Naturaleza' },
-    { url: '/imagenes/naturaleza3.webp', titulo: 'Bosque', categoria: 'Naturaleza' },
-    { url: '/imagenes/naturaleza4.jpg', titulo: 'Parque', categoria: 'Naturaleza' },
-    { url: '/imagenes/mascota1.webp', titulo: 'Loro', categoria: 'Mascotas' },
-    { url: '/imagenes/mascota2.webp', titulo: 'Gato', categoria: 'Mascotas' },
-    { url: '/imagenes/mascota3.webp', titulo: 'Bóxer', categoria: 'Mascotas' },
-    { url: '/imagenes/mascota4.webp', titulo: 'Bulldog', categoria: 'Mascotas' },
-    { url: '/imagenes/ciudad1.webp', titulo: 'Florencia', categoria: 'Ciudades' },
-    { url: '/imagenes/ciudad2.webp', titulo: 'New York', categoria: 'Ciudades' },
-    { url: '/imagenes/ciudad3.webp', titulo: 'Venecia', categoria: 'Ciudades' },
-    { url: '/imagenes/ciudad4.webp', titulo: 'Buenos Aires', categoria: 'Ciudades' },
+    { url: 'imagenes/naturaleza1.webp', titulo: 'Montañas', categoria: 'Naturaleza' },
+    { url: 'imagenes/naturaleza2.webp', titulo: 'Campo', categoria: 'Naturaleza' },
+    { url: 'imagenes/naturaleza3.webp', titulo: 'Bosque', categoria: 'Naturaleza' },
+    { url: 'imagenes/naturaleza4.webp', titulo: 'Parque', categoria: 'Naturaleza' },
+    { url: 'imagenes/mascota1.webp', titulo: 'Loro', categoria: 'Mascotas' },
+    { url: 'imagenes/mascota2.webp', titulo: 'Gato', categoria: 'Mascotas' },
+    { url: 'imagenes/mascota3.webp', titulo: 'Bóxer', categoria: 'Mascotas' },
+    { url: 'imagenes/mascota4.webp', titulo: 'Bulldog', categoria: 'Mascotas' },
+    { url: 'imagenes/ciudad1.webp', titulo: 'Florencia', categoria: 'Ciudades' },
+    { url: 'imagenes/ciudad2.webp', titulo: 'New York', categoria: 'Ciudades' },
+    { url: 'imagenes/ciudad3.webp', titulo: 'Venecia', categoria: 'Ciudades' },
+    { url: 'imagenes/ciudad4.webp', titulo: 'Buenos Aires', categoria: 'Ciudades' },
   ];
 
   //SECCION SUBIR IMAGENES
@@ -87,9 +87,21 @@ function App() {
   });
 
   return (
-    
-    /// modo dia y noche
-    <div className={modoOscuro ? 'fondo-noche' : 'fondo-dia'}>
+    <>
+      <video
+      key={modoOscuro ? 'noche' : 'dia'} // <-- Forzamos la recarga
+    autoPlay
+    loop
+    muted
+    playsInline
+    className="fondo-video"
+  >
+    <source
+      src={modoOscuro ? 'fondo-noche.mp4' : 'fondo-dia.mp4'}
+      type="video/mp4"
+    />
+  </video>
+    <div className={modoOscuro ? 'fondo-noche' : 'fondo-noche'}>
 
     {/* Botón Modo Día/Noche */}
     <div style={{ textAlign: 'right', padding: '10px' }}>
@@ -205,6 +217,7 @@ function App() {
   />
 
     </div>
+    </>
   );
 }
 
