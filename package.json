@@ -1,4 +1,5 @@
 {
+  "homepage": "https://IanPallero03.github.io/Galeria_de_fotos",
   "name": "mi-primer-proyecto",
   "private": true,
   "version": "0.0.0",
@@ -7,7 +8,9 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+  "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^7.0.0",
@@ -31,3 +34,4 @@
     "vite": "^7.0.4"
   }
 }
+
